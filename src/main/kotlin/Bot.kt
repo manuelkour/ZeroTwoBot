@@ -11,7 +11,7 @@ suspend fun main(args: Array<String>) {
     // "Passive" Youtube Annoucement Funktion (Rebecca Elizabeth)
     kord.on<ReadyEvent> {
         //while(true) {
-            youtube(kord)
+            youtube(kord, args[1])
        // }
     }
 

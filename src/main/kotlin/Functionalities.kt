@@ -16,10 +16,10 @@ fun w2g(video: String) : String {
                 .substring(12).replace("\"","")
 }
 
-suspend fun youtube(bot: Kord) {
+suspend fun youtube(bot: Kord, key: String) {
     // Thread.sleep(900000)
     try {
-        val response = httpGet("https://www.googleapis.com/youtube/v3/search?key=AIzaSyAYd0qg6KQuEy-Kl6e5ILAjNTu2ZWT0TxU&channelId=UCun2qqzZOOVcuW9hZhaDxmQ&part=snippet,id&order=date&maxResults=1")
+        val response = httpGet("https://www.googleapis.com/youtube/v3/search?key=$key&channelId=UCun2qqzZOOVcuW9hZhaDxmQ&part=snippet,id&order=date&maxResults=1")
         val video = response.text.split(",")[3]
         for (s in response.text.split(","))
             println(s)
