@@ -3,7 +3,7 @@
 ![Zero Two](https://i.redd.it/t6m5tgfvkw351.jpg)
 
 
-Discord Bot written for private use in Kotlin via Kord.
+Discord Bot for private use written in Kotlin via Kord.
 
 # Current commands:
 
