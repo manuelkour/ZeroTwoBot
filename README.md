@@ -1,6 +1,9 @@
-# ZeroTwoBot
+# ZeroTwoBot 
 
-Discord Bot written for private use in Kotlin via Kord.
+![Zero Two](https://i.redd.it/t6m5tgfvkw351.jpg)
+
+
+Discord Bot for private use written in Kotlin via Kord.
 
 # Current commands:
 
@@ -10,6 +13,6 @@ Discord Bot written for private use in Kotlin via Kord.
 
 **!w2g [video link]** - creates a Watch2Gether Room with the included video. 
 
-#### Passive functions 
+#### Passive functions:
 
 **Youtube Annoucements** - announces a new upload in a #announcement channel. 
