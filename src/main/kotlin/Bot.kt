@@ -2,6 +2,7 @@ import dev.kord.core.*
 import dev.kord.core.entity.ReactionEmoji
 import dev.kord.core.event.gateway.ReadyEvent
 import dev.kord.core.event.message.MessageCreateEvent
+import dev.kord.core.event.message.ReactionAddEvent
 import kotlinx.coroutines.delay
 
 suspend fun main(args: Array<String>) {
@@ -12,6 +13,7 @@ suspend fun main(args: Array<String>) {
     kord.on<ReadyEvent> {
         //while(true) {
             youtube(kord, args[1])
+        reactionRoles(kord)
        // }
     }
 
@@ -27,6 +29,10 @@ suspend fun main(args: Array<String>) {
                 false -> message.channel.createMessage("https://w2g.tv/rooms/" + w2g(message.content.substring(5)))
             }
         }
+    }
+
+    kord.on<ReactionAddEvent> {
+
     }
 
 
