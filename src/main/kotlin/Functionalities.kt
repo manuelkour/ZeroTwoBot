@@ -22,7 +22,7 @@ fun w2g(video: String) : String {
 }
 
 suspend fun youtube(bot: Kord, key: String) {
-    // Thread.sleep(900000)
+    Thread.sleep(900000)
     try {
         val response = httpGet("https://www.googleapis.com/youtube/v3/search?key=$key&channelId=UCun2qqzZOOVcuW9hZhaDxmQ&part=snippet,id&order=date&maxResults=1")
         val video = response.text.split(",")[9].substring(21)

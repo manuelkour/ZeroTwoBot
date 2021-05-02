@@ -11,10 +11,10 @@ suspend fun main(args: Array<String>) {
 
     // "Passive" Youtube Annoucement Funktion (Rebecca Elizabeth)
     kord.on<ReadyEvent> {
-        //while(true) {
+        while(true) {
             youtube(kord, args[1])
-        reactionRoles(kord)
-       // }
+        // reactionRoles(kord)
+        }
     }
 
     // Message Events bzw. aktiv ausgelöste Events von Usern
