@@ -1,3 +1,4 @@
 
-rootProject.name = "untitled"
+rootProject.name = "zerotwobot"
+include("untitled")
 
