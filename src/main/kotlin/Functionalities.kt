@@ -21,6 +21,14 @@ fun w2g(video: String) : String {
                 .substring(12).replace("\"","")
 }
 
+fun redditMeme() : String {
+    val response = httpGet(url = "https://reddit-meme-api.herokuapp.com/");
+    return if (response.statusCode == 200)
+        "**"+response.jsonObject.getString("title")+ "**\n" + response.jsonObject.getString("url")
+    else
+        "Joa top, das funktioniert ja nich so wie es eigentlich sollte..."
+}
+
 suspend fun youtube(bot: Kord, key: String) {
     Thread.sleep(900000)
     try {

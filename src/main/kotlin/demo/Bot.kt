@@ -1,5 +1,3 @@
-
-
 import dev.kord.core.*
 import dev.kord.core.entity.ReactionEmoji
 import dev.kord.core.event.gateway.ReadyEvent
@@ -22,10 +20,17 @@ suspend fun main(args: Array<String>) {
     // Message Events bzw. aktiv ausgelöste Events von Usern
     kord.on<MessageCreateEvent> {
 
-        if(message.author?.isBot != false) return@on
+        if(message.author?.isBot != false)
+            return@on
+
+        //spicy memes
+        if(message.content.contains("!meme")) {
+            message.channel.createMessage(redditMeme());
+        }
 
         //W2G Room (Base Case ist irgendein random Video von Sawano)
-        if(message.content.contains("!w2g")) {
+        else if(message.content.contains("!w2g")) {
+            if (message.content.length <= 4)
             when (message.content.length <= 4) {
                 true -> message.channel.createMessage("https://w2g.tv/rooms/" + w2g("https://www.youtube.com/watch?v=4ja403hodxM"))
                 false -> message.channel.createMessage("https://w2g.tv/rooms/" + w2g(message.content.substring(5)))
@@ -37,8 +42,5 @@ suspend fun main(args: Array<String>) {
 
     }
 
-
-
     kord.login()
-
 }
