@@ -6,10 +6,8 @@ plugins {
 }
 
 application {
-    mainClass.set("demo.Bot")
+    mainClass.set("BotKt")
 }
-
-
 
 group = "me.manue"
 version = "1.0-SNAPSHOT"
