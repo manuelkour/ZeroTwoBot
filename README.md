@@ -7,7 +7,6 @@ Discord Bot for private use written in Kotlin via Kord.
 
 # Current commands:
 
-#### **Watch2Gether:**
 
 **!w2g** - automatically creates a Watch2Gether Room (with a Hiroyuki Sawano video as base)
 
