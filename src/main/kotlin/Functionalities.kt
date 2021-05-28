@@ -6,6 +6,7 @@ import dev.kord.core.entity.GuildEmoji
 import dev.kord.core.entity.ReactionEmoji
 import dev.kord.core.entity.channel.MessageChannel
 import dev.kord.core.live.live
+import kotlinx.coroutines.delay
 import khttp.get as httpGet
 import khttp.post as httpPost
 
@@ -22,7 +23,7 @@ fun w2g(video: String) : String {
 }
 
 fun redditMeme() : String {
-    val response = httpGet(url = "https://reddit-meme-api.herokuapp.com/");
+    val response = httpGet(url = "https://reddit-meme-api.herokuapp.com/")
     return if (response.statusCode == 200)
         "**"+response.jsonObject.getString("title")+ "**\n" + response.jsonObject.getString("url")
     else
@@ -30,14 +31,13 @@ fun redditMeme() : String {
 }
 
 suspend fun youtube(bot: Kord, key: String) {
-    Thread.sleep(900000)
+    delay(900000)
     try {
         val response = httpGet("https://www.googleapis.com/youtube/v3/search?key=$key&channelId=UCun2qqzZOOVcuW9hZhaDxmQ&part=snippet,id&order=date&maxResults=1")
         val video = response.text.split(",")[9].substring(21)
                     .replace("}", "").replace("\"", "").trim()
 
-        val channel : MessageChannel
-        channel = bot.getChannel(Snowflake(664780271165505536))?.asChannel() as MessageChannel
+        val channel : MessageChannel = bot.getChannel(Snowflake(664780271165505536))?.asChannel() as MessageChannel
         if(!video.equals(current_video)) {
             current_video = video
             channel.createMessage("@everyone Neues Video ist draußen! https://www.youtube.com/watch?v=" + current_video)
