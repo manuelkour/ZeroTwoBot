@@ -11,7 +11,8 @@ import java.nio.file.Files
 import java.nio.file.Path
 
 suspend fun main(args: Array<String>) {
-    val BOT_TOKEN = args[0]
+    val BOT_TOKEN = Files.readString(Path.of("token.txt"))
+
     val kord = Kord(BOT_TOKEN)
 
     //setup bad apple animation
@@ -38,11 +39,11 @@ suspend fun main(args: Array<String>) {
 
         //very bad bad apple animation
         else if(message.content.contains("!apple")) {
-            val m = message.channel.createMessage("```Bad Apple```")
+            val m = message.channel.createMessage("```\uD83C\uDF4E```")
             for (frame in 0..6572 step 5) {
                 var msg = "frame $frame\n"
                 for (line in 0..17)
-                    msg = msg + badAppleAnim[frame*18+line] + "\n"
+                    msg = msg + badAppleAnim[frame*17+line] + "\n"
                 m.edit { content = "```$msg```" }
                 delay(700)
             }
