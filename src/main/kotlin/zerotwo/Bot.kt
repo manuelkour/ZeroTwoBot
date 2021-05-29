@@ -43,7 +43,7 @@ suspend fun main(args: Array<String>) {
             for (frame in 0..6572 step 5) {
                 var msg = "frame $frame\n"
                 for (line in 0..17)
-                    msg = msg + badAppleAnim[frame*17+line] + "\n"
+                    msg = msg + badAppleAnim[frame*18+line] + "\n"
                 m.edit { content = "```$msg```" }
                 delay(700)
             }
