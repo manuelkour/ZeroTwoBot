@@ -14,6 +14,8 @@ Discord Bot for private use written in Kotlin via Kord.
 
 **!meme** - gets you a random dank meme from Reddit. 
 
+**!apple** - really bad (like really really bad) "Bad Apple" animation in Discord.
+
 #### Passive functions:
 
-**Youtube Annoucements** - announces a new upload in a #announcement channel. 
+**Youtube Annoucements** - announces a new video upload in an #announcement channel. 
