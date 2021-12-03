@@ -1,4 +1,3 @@
-token.txt
 .DS_Store
 .idea/shelf
 /confluence/target
@@ -69,4 +68,3 @@ distTmp/
 outTmp/
 /test.output
 /kotlin-native/dist
-/token.txt
